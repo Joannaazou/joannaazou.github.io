@@ -24,9 +24,11 @@ header {
 
     z-index: 1000;
 
-    padding: 70px 7vw 40px;
+    width: 100%;
 
-    max-width: 650px;
+    padding: 80px 30px 50px;
+
+    text-align: center;
 }
 
 header h1 {
@@ -61,7 +63,9 @@ header p {
 }
 
 
-/* Individual artworks */
+/* =========================
+   Individual Artworks
+   ========================= */
 
 .art {
     position: absolute;
@@ -74,18 +78,13 @@ header p {
 
     user-select: none;
 
-    box-shadow: 0 8px 25px rgba(0,0,0,0.12);
-
-    transition:
-        box-shadow 0.2s ease,
-        transform 0.2s ease;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
 }
 
-.art:hover {
-    box-shadow: 0 15px 35px rgba(0,0,0,0.18);
 
-    transform: scale(1.02);
-}
+/*
+   When holding the mouse
+*/
 
 .art:active {
     cursor: grabbing;
@@ -113,8 +112,11 @@ header p {
 
     padding: 40px;
 
-    background: rgba(20,20,20,0.92);
+    background: rgba(20, 20, 20, 0.92);
 }
+
+
+/* Large artwork */
 
 #viewer-image {
     max-width: 75vw;
@@ -123,6 +125,9 @@ header p {
 
     object-fit: contain;
 }
+
+
+/* Artwork description */
 
 #description {
     max-width: 650px;
@@ -135,6 +140,8 @@ header p {
 }
 
 #description h2 {
+    margin-bottom: 10px;
+
     font-size: 26px;
 
     font-weight: normal;
@@ -151,7 +158,9 @@ header p {
 }
 
 
-/* Close button */
+/* =========================
+   Close Button
+   ========================= */
 
 #close {
     position: absolute;
