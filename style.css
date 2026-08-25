@@ -9,7 +9,7 @@ html {
 body {
     margin: 0;
 
-    background: #f5f1e8;
+    background: #fefefe;
 
     color: #24211d;
 
@@ -42,7 +42,7 @@ header h1 {
 
     line-height: 1.05;
 
-    font-weight: 700;
+    font-weight: 600;
 }
 
 header p {
