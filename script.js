@@ -1,18 +1,47 @@
 const artworks = document.querySelectorAll(".art");
 
 const viewer = document.getElementById("viewer");
-
 const viewerImage = document.getElementById("viewer-image");
-
 const closeButton = document.getElementById("close");
 
 const title = document.getElementById("art-title");
-
 const text = document.getElementById("art-text");
 
 
 /* =========================
-   Initial artwork positions
+   Artwork information
+   ========================= */
+
+const artworkInfo = [
+    {
+        title: "Artwork 01",
+        description: "A drawing about observation and imagination."
+    },
+
+    {
+        title: "Artwork 02",
+        description: "A study of form, light, and space."
+    },
+
+    {
+        title: "Artwork 03",
+        description: "A visual experiment with color and composition."
+    },
+
+    {
+        title: "Artwork 04",
+        description: "A drawing inspired by everyday observations."
+    },
+
+    {
+        title: "Artwork 05",
+        description: "An exploration of shapes and atmosphere."
+    }
+];
+
+
+/* =========================
+   Initial positions
    ========================= */
 
 const positions = [
@@ -47,7 +76,6 @@ const positions = [
 artworks.forEach((art, index) => {
 
     art.style.left = positions[index][0] + "%";
-
     art.style.top = positions[index][1] + "px";
 
     art.style.zIndex = index;
@@ -59,45 +87,66 @@ artworks.forEach((art, index) => {
    Dragging
    ========================= */
 
-artworks.forEach((art) => {
+artworks.forEach((art, index) => {
 
     let isDragging = false;
 
-    let startX;
-    let startY;
+    let startX = 0;
+    let startY = 0;
 
-    let originalX;
-    let originalY;
+    let originalX = 0;
+    let originalY = 0;
 
     let moved = false;
 
 
+    /*
+       Mouse button pressed
+    */
+
     art.addEventListener("mousedown", (event) => {
+
+        /*
+           Only respond to left mouse button
+        */
+
+        if (event.button !== 0) return;
+
 
         isDragging = true;
 
         moved = false;
 
         startX = event.clientX;
-
         startY = event.clientY;
 
         originalX = art.offsetLeft;
-
         originalY = art.offsetTop;
+
+        art.style.cursor = "grabbing";
 
         art.style.zIndex = 1000;
 
     });
 
 
+    /*
+       Mouse movement
+    */
+
     document.addEventListener("mousemove", (event) => {
 
         if (!isDragging) return;
 
-        const dx = event.clientX - startX;
 
+        const dx = event.clientX - startX;
         const dy = event.clientY - startY;
+
+
+        /*
+           Only count as dragging after
+           the mouse has actually moved
+        */
 
         if (Math.abs(dx) > 5 || Math.abs(dy) > 5) {
 
@@ -105,36 +154,74 @@ artworks.forEach((art) => {
 
         }
 
-        art.style.left = originalX + dx + "px";
 
-        art.style.top = originalY + dy + "px";
+        /*
+           Move the artwork
+        */
+
+        if (moved) {
+
+            art.style.left = originalX + dx + "px";
+
+            art.style.top = originalY + dy + "px";
+
+        }
 
     });
 
+
+    /*
+       Mouse released
+    */
 
     document.addEventListener("mouseup", () => {
 
+        if (!isDragging) return;
+
         isDragging = false;
+
+        art.style.cursor = "grab";
 
     });
 
 
-    /* =========================
-       Click to open
-       ========================= */
+    /*
+       Click
+       
+       If the user did NOT drag the image,
+       open the artwork viewer.
+    */
 
     art.addEventListener("click", () => {
 
         if (moved) return;
 
+
         viewer.style.display = "flex";
 
         viewerImage.src = art.src;
 
-        title.textContent = "Artwork";
 
-        text.textContent =
-            "A drawing, an observation, a thought, or simply something I wanted to make.";
+        /*
+           Use artwork information
+        */
+
+        if (artworkInfo[index]) {
+
+            title.textContent =
+                artworkInfo[index].title;
+
+            text.textContent =
+                artworkInfo[index].description;
+
+        } else {
+
+            title.textContent = "Artwork";
+
+            text.textContent =
+                "A drawing, an observation, a thought, or something I wanted to make.";
+
+        }
 
     });
 
@@ -151,6 +238,11 @@ closeButton.addEventListener("click", () => {
 
 });
 
+
+/*
+   Click outside the artwork
+   to close viewer
+*/
 
 viewer.addEventListener("click", (event) => {
 
