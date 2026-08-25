@@ -178,7 +178,7 @@ function arrangeArtworks() {
             */
 
             x = Math.random() *
-                Math.max(20, wallWidth - width - 40) + 20;
+                Math.max(20, wallWidth - width - 55) + 25;
 
 
             /*
@@ -189,7 +189,7 @@ function arrangeArtworks() {
             */
 
             y = Math.random() *
-                Math.max(100, wallHeight - height - 40) + 20;
+                Math.max(100, wallHeight - height - 55) + 25;
 
 
             validPosition = true;
