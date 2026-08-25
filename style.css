@@ -2,14 +2,18 @@
     box-sizing: border-box;
 }
 
+html {
+    background: white;
+}
+
 body {
     margin: 0;
 
-    background: #f5f3ee;
+    background: white;
 
-    color: #222;
+    color: #111;
 
-    font-family: Georgia, "Times New Roman", serif;
+    font-family: "Bodoni Moda", "Times New Roman", serif;
 
     overflow-x: hidden;
 }
@@ -26,27 +30,31 @@ header {
 
     width: 100%;
 
-    padding: 80px 30px 50px;
+    padding: 70px 30px 70px;
 
     text-align: center;
 }
 
 header h1 {
-    margin: 0 0 20px;
+    margin: 0 0 18px;
 
-    font-size: 48px;
+    font-size: 64px;
 
-    font-weight: normal;
+    line-height: 1.05;
+
+    font-weight: 500;
 }
 
 header p {
     margin: 0;
 
-    font-size: 21px;
+    font-size: 22px;
 
-    line-height: 1.6;
+    line-height: 1.4;
 
-    font-style: italic;
+    font-style: normal;
+
+    font-weight: 400;
 }
 
 
@@ -59,7 +67,9 @@ header p {
 
     width: 100%;
 
-    min-height: 1600px;
+    min-height: 2400px;
+
+    overflow: hidden;
 }
 
 
@@ -70,7 +80,7 @@ header p {
 .art {
     position: absolute;
 
-    width: 180px;
+    width: 190px;
 
     height: auto;
 
@@ -78,16 +88,31 @@ header p {
 
     user-select: none;
 
+    -webkit-user-drag: none;
+
+    touch-action: none;
+
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+
+    transition: box-shadow 0.15s ease;
 }
 
 
-/*
-   When holding the mouse
-*/
+/* Hover */
 
-.art:active {
+.art:hover {
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.16);
+}
+
+
+/* Holding */
+
+.art.dragging {
     cursor: grabbing;
+
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.22);
+
+    transition: none;
 }
 
 
@@ -112,11 +137,9 @@ header p {
 
     padding: 40px;
 
-    background: rgba(20, 20, 20, 0.92);
+    background: rgba(20, 20, 20, 0.94);
 }
 
-
-/* Large artwork */
 
 #viewer-image {
     max-width: 75vw;
@@ -126,8 +149,6 @@ header p {
     object-fit: contain;
 }
 
-
-/* Artwork description */
 
 #description {
     max-width: 650px;
@@ -139,15 +160,19 @@ header p {
     text-align: center;
 }
 
-#description h2 {
-    margin-bottom: 10px;
 
-    font-size: 26px;
+#description h2 {
+    margin: 0 0 12px;
+
+    font-size: 28px;
 
     font-weight: normal;
 }
 
+
 #description p {
+    margin: 0;
+
     font-family: Arial, sans-serif;
 
     font-size: 15px;
@@ -178,4 +203,33 @@ header p {
     font-size: 40px;
 
     cursor: pointer;
+}
+
+
+/* =========================
+   Mobile
+   ========================= */
+
+@media (max-width: 700px) {
+
+    header {
+        padding: 50px 20px 50px;
+    }
+
+    header h1 {
+        font-size: 42px;
+    }
+
+    header p {
+        font-size: 17px;
+    }
+
+    #art-wall {
+        min-height: 2200px;
+    }
+
+    .art {
+        width: 130px;
+    }
+
 }
