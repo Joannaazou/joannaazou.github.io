@@ -13,7 +13,7 @@ body {
 
     color: #111;
 
-    font-family: "Bodoni Moda", "Times New Roman", serif;
+    font-family: "Crimson Pro", "Times New Roman", serif;
 
     overflow-x: hidden;
 }
@@ -30,15 +30,15 @@ header {
 
     width: 100%;
 
-    padding: 70px 30px 70px;
+    padding: 55px 30px 50px;
 
     text-align: center;
 }
 
 header h1 {
-    margin: 0 0 18px;
+    margin: 0 0 14px;
 
-    font-size: 64px;
+    font-size: 62px;
 
     line-height: 1.05;
 
@@ -48,9 +48,9 @@ header h1 {
 header p {
     margin: 0;
 
-    font-size: 22px;
+    font-size: 23px;
 
-    line-height: 1.4;
+    line-height: 1.35;
 
     font-style: normal;
 
@@ -67,7 +67,11 @@ header p {
 
     width: 100%;
 
-    min-height: 2400px;
+    /*
+       原本是 2400px。
+       改成 1750px，让整体画布明显更紧凑。
+    */
+    min-height: 1750px;
 
     overflow: hidden;
 }
@@ -80,7 +84,11 @@ header p {
 .art {
     position: absolute;
 
-    width: 190px;
+    /*
+       原本是 190px。
+       改为 215px，让图片稍微更突出。
+    */
+    width: 215px;
 
     height: auto;
 
@@ -97,15 +105,9 @@ header p {
     transition: box-shadow 0.15s ease;
 }
 
-
-/* Hover */
-
 .art:hover {
     box-shadow: 0 12px 30px rgba(0, 0, 0, 0.16);
 }
-
-
-/* Holding */
 
 .art.dragging {
     cursor: grabbing;
@@ -140,7 +142,6 @@ header p {
     background: rgba(20, 20, 20, 0.94);
 }
 
-
 #viewer-image {
     max-width: 75vw;
 
@@ -148,7 +149,6 @@ header p {
 
     object-fit: contain;
 }
-
 
 #description {
     max-width: 650px;
@@ -160,24 +160,26 @@ header p {
     text-align: center;
 }
 
-
 #description h2 {
     margin: 0 0 12px;
 
     font-size: 28px;
 
-    font-weight: normal;
+    font-weight: 500;
 }
-
 
 #description p {
     margin: 0;
 
-    font-family: Arial, sans-serif;
+    /*
+       原先这里强制使用 Arial，
+       改为 Crimson Pro，保证弹窗也统一字体。
+    */
+    font-family: "Crimson Pro", "Times New Roman", serif;
 
-    font-size: 15px;
+    font-size: 18px;
 
-    line-height: 1.7;
+    line-height: 1.5;
 
     color: #ddd;
 }
@@ -200,7 +202,9 @@ header p {
 
     color: white;
 
-    font-size: 40px;
+    font-family: "Crimson Pro", "Times New Roman", serif;
+
+    font-size: 42px;
 
     cursor: pointer;
 }
@@ -213,23 +217,23 @@ header p {
 @media (max-width: 700px) {
 
     header {
-        padding: 50px 20px 50px;
+        padding: 45px 20px 40px;
     }
 
     header h1 {
-        font-size: 42px;
+        font-size: 46px;
     }
 
     header p {
-        font-size: 17px;
+        font-size: 19px;
     }
 
     #art-wall {
-        min-height: 2200px;
+        min-height: 1850px;
     }
 
     .art {
-        width: 130px;
+        width: 145px;
     }
 
 }
