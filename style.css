@@ -1,0 +1,172 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+
+    background: #f5f3ee;
+
+    color: #222;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    overflow-x: hidden;
+}
+
+
+/* =========================
+   Introduction
+   ========================= */
+
+header {
+    position: relative;
+
+    z-index: 1000;
+
+    padding: 70px 7vw 40px;
+
+    max-width: 650px;
+}
+
+header h1 {
+    margin: 0 0 20px;
+
+    font-size: 48px;
+
+    font-weight: normal;
+}
+
+header p {
+    margin: 0;
+
+    font-size: 21px;
+
+    line-height: 1.6;
+
+    font-style: italic;
+}
+
+
+/* =========================
+   Artwork Wall
+   ========================= */
+
+#art-wall {
+    position: relative;
+
+    width: 100%;
+
+    min-height: 1600px;
+}
+
+
+/* Individual artworks */
+
+.art {
+    position: absolute;
+
+    width: 180px;
+
+    height: auto;
+
+    cursor: grab;
+
+    user-select: none;
+
+    box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+
+    transition:
+        box-shadow 0.2s ease,
+        transform 0.2s ease;
+}
+
+.art:hover {
+    box-shadow: 0 15px 35px rgba(0,0,0,0.18);
+
+    transform: scale(1.02);
+}
+
+.art:active {
+    cursor: grabbing;
+}
+
+
+/* =========================
+   Fullscreen Viewer
+   ========================= */
+
+#viewer {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 2000;
+
+    display: none;
+
+    align-items: center;
+
+    justify-content: center;
+
+    flex-direction: column;
+
+    padding: 40px;
+
+    background: rgba(20,20,20,0.92);
+}
+
+#viewer-image {
+    max-width: 75vw;
+
+    max-height: 70vh;
+
+    object-fit: contain;
+}
+
+#description {
+    max-width: 650px;
+
+    margin-top: 25px;
+
+    color: white;
+
+    text-align: center;
+}
+
+#description h2 {
+    font-size: 26px;
+
+    font-weight: normal;
+}
+
+#description p {
+    font-family: Arial, sans-serif;
+
+    font-size: 15px;
+
+    line-height: 1.7;
+
+    color: #ddd;
+}
+
+
+/* Close button */
+
+#close {
+    position: absolute;
+
+    top: 25px;
+
+    right: 35px;
+
+    border: none;
+
+    background: none;
+
+    color: white;
+
+    font-size: 40px;
+
+    cursor: pointer;
+}
