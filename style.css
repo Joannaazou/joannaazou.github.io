@@ -13,7 +13,7 @@ body {
 
     color: #24211d;
 
-    font-family: "Crimson Pro", "Times New Roman", serif;
+    font-family: "Libre Bodoni", "Times New Roman", serif;
 
     overflow-x: hidden;
 }
@@ -38,11 +38,13 @@ header {
 header h1 {
     margin: 0 0 14px;
 
-    font-size: 62px;
+    font-size: 68px;
 
-    line-height: 1.05;
+    line-height: 0.95;
 
-    font-weight: 600;
+    font-weight: 700;
+
+    letter-spacing: -0.04em;
 }
 
 header p {
