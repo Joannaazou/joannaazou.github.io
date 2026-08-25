@@ -1,10 +1,15 @@
 const artworks = document.querySelectorAll(".art");
 
+const wall = document.getElementById("art-wall");
+
 const viewer = document.getElementById("viewer");
+
 const viewerImage = document.getElementById("viewer-image");
+
 const closeButton = document.getElementById("close");
 
 const title = document.getElementById("art-title");
+
 const text = document.getElementById("art-text");
 
 
@@ -13,72 +18,246 @@ const text = document.getElementById("art-text");
    ========================= */
 
 const artworkInfo = [
+
     {
         title: "Artwork 01",
-        description: "A drawing about observation and imagination."
+        description:
+            "A drawing about observation and imagination."
     },
 
     {
         title: "Artwork 02",
-        description: "A study of form, light, and space."
+        description:
+            "A study of form, light, and space."
     },
 
     {
         title: "Artwork 03",
-        description: "A visual experiment with color and composition."
+        description:
+            "A visual experiment with color and composition."
     },
 
     {
         title: "Artwork 04",
-        description: "A drawing inspired by everyday observations."
+        description:
+            "A drawing inspired by everyday observations."
     },
 
     {
         title: "Artwork 05",
-        description: "An exploration of shapes and atmosphere."
+        description:
+            "An exploration of shapes and atmosphere."
+    },
+
+    {
+        title: "Artwork 06",
+        description:
+            "A study of movement and form."
+    },
+
+    {
+        title: "Artwork 07",
+        description:
+            "An experiment with visual storytelling."
+    },
+
+    {
+        title: "Artwork 08",
+        description:
+            "A drawing inspired by memory."
+    },
+
+    {
+        title: "Artwork 09",
+        description:
+            "A study of space and atmosphere."
+    },
+
+    {
+        title: "Artwork 10",
+        description:
+            "An exploration of line and composition."
+    },
+
+    {
+        title: "Artwork 11",
+        description:
+            "A small visual experiment."
+    },
+
+    {
+        title: "Artwork 12",
+        description:
+            "A drawing about observation."
+    },
+
+    {
+        title: "Artwork 13",
+        description:
+            "An exploration of imagination."
+    },
+
+    {
+        title: "Artwork 14",
+        description:
+            "A study of light and shadow."
+    },
+
+    {
+        title: "Artwork 15",
+        description:
+            "A visual note from my sketchbook."
+    },
+
+    {
+        title: "Artwork 16",
+        description:
+            "An experiment with form."
+    },
+
+    {
+        title: "Artwork 17",
+        description:
+            "A drawing inspired by everyday life."
+    },
+
+    {
+        title: "Artwork 18",
+        description:
+            "A study of atmosphere."
+    },
+
+    {
+        title: "Artwork 19",
+        description:
+            "A visual experiment."
+    },
+
+    {
+        title: "Artwork 20",
+        description:
+            "Something I wanted to draw."
     }
+
 ];
 
 
 /* =========================
-   Initial positions
+   Random artwork layout
    ========================= */
 
-const positions = [
+function arrangeArtworks() {
 
-    [8, 20],
-    [42, 10],
-    [72, 25],
-    [18, 45],
-    [55, 40],
+    const wallWidth = wall.clientWidth;
 
-    [82, 55],
-    [5, 70],
-    [38, 65],
-    [65, 75],
-    [25, 85],
+    const wallHeight = wall.clientHeight;
 
-    [78, 90],
-    [12, 100],
-    [50, 105],
-    [88, 110],
-    [35, 120],
-
-    [70, 125],
-    [5, 135],
-    [45, 140],
-    [82, 145],
-    [25, 150]
-
-];
+    const placed = [];
 
 
-artworks.forEach((art, index) => {
+    artworks.forEach((art, index) => {
 
-    art.style.left = positions[index][0] + "%";
-    art.style.top = positions[index][1] + "px";
+        const width = art.offsetWidth;
 
-    art.style.zIndex = index;
+        const height = art.offsetHeight;
+
+
+        let x;
+
+        let y;
+
+        let attempts = 0;
+
+        let validPosition = false;
+
+
+        while (!validPosition && attempts < 200) {
+
+            /*
+               Random horizontal position
+            */
+
+            x = Math.random() *
+                Math.max(20, wallWidth - width - 40) + 20;
+
+
+            /*
+               Random vertical position
+
+               This is the important part:
+               the entire 2400px wall is used.
+            */
+
+            y = Math.random() *
+                Math.max(100, wallHeight - height - 40) + 20;
+
+
+            validPosition = true;
+
+
+            /*
+               Check distance from existing images
+            */
+
+            for (const other of placed) {
+
+                const horizontalDistance =
+                    Math.abs(x - other.x);
+
+                const verticalDistance =
+                    Math.abs(y - other.y);
+
+
+                /*
+                   Minimum spacing
+
+                   Larger values = less overlap
+                */
+
+                if (
+                    horizontalDistance < 250 &&
+                    verticalDistance < 220
+                ) {
+
+                    validPosition = false;
+
+                    break;
+                }
+
+            }
+
+
+            attempts++;
+
+        }
+
+
+        /*
+           Place artwork
+        */
+
+        art.style.left = x + "px";
+
+        art.style.top = y + "px";
+
+
+        placed.push({
+            x: x,
+            y: y
+        });
+
+    });
+
+}
+
+
+/*
+   Wait until images are loaded
+*/
+
+window.addEventListener("load", () => {
+
+    arrangeArtworks();
 
 });
 
@@ -89,81 +268,111 @@ artworks.forEach((art, index) => {
 
 artworks.forEach((art, index) => {
 
-    let isDragging = false;
-
-    let startX = 0;
-    let startY = 0;
-
-    let originalX = 0;
-    let originalY = 0;
+    let dragging = false;
 
     let moved = false;
 
+    let startPointerX = 0;
+
+    let startPointerY = 0;
+
+    let startLeft = 0;
+
+    let startTop = 0;
+
 
     /*
-       Mouse button pressed
+       Pointer pressed
     */
 
-    art.addEventListener("mousedown", (event) => {
+    art.addEventListener("pointerdown", (event) => {
 
         /*
-           Only respond to left mouse button
+           Only respond to primary pointer
         */
 
-        if (event.button !== 0) return;
+        if (!event.isPrimary) return;
 
 
-        isDragging = true;
+        dragging = true;
 
         moved = false;
 
-        startX = event.clientX;
-        startY = event.clientY;
 
-        originalX = art.offsetLeft;
-        originalY = art.offsetTop;
+        startPointerX = event.clientX;
 
-        art.style.cursor = "grabbing";
+        startPointerY = event.clientY;
 
-        art.style.zIndex = 1000;
+
+        startLeft = art.offsetLeft;
+
+        startTop = art.offsetTop;
+
+
+        /*
+           Bring image to front
+        */
+
+        art.style.zIndex = 1000 + index;
+
+
+        /*
+           Capture pointer
+
+           This prevents the drag from
+           breaking when the pointer moves
+           quickly.
+        */
+
+        art.setPointerCapture(event.pointerId);
+
+
+        art.classList.add("dragging");
+
+
+        event.preventDefault();
 
     });
 
 
     /*
-       Mouse movement
+       Pointer moves
     */
 
-    document.addEventListener("mousemove", (event) => {
+    art.addEventListener("pointermove", (event) => {
 
-        if (!isDragging) return;
+        if (!dragging) return;
 
 
-        const dx = event.clientX - startX;
-        const dy = event.clientY - startY;
+        const dx =
+            event.clientX - startPointerX;
+
+        const dy =
+            event.clientY - startPointerY;
 
 
         /*
-           Only count as dragging after
-           the mouse has actually moved
+           Only consider it a drag after
+           moving at least 6 pixels.
         */
 
-        if (Math.abs(dx) > 5 || Math.abs(dy) > 5) {
+        if (
+            Math.abs(dx) > 6 ||
+            Math.abs(dy) > 6
+        ) {
 
             moved = true;
 
         }
 
 
-        /*
-           Move the artwork
-        */
-
         if (moved) {
 
-            art.style.left = originalX + dx + "px";
+            art.style.left =
+                startLeft + dx + "px";
 
-            art.style.top = originalY + dy + "px";
+            art.style.top =
+                startTop + dy + "px";
 
         }
 
@@ -171,39 +380,78 @@ artworks.forEach((art, index) => {
 
 
     /*
-       Mouse released
+       Pointer released
     */
 
-    document.addEventListener("mouseup", () => {
+    art.addEventListener("pointerup", (event) => {
 
-        if (!isDragging) return;
+        if (!dragging) return;
 
-        isDragging = false;
 
-        art.style.cursor = "grab";
+        dragging = false;
+
+
+        art.classList.remove("dragging");
+
+
+        /*
+           Release pointer capture
+        */
+
+        if (
+            art.hasPointerCapture(event.pointerId)
+        ) {
+
+            art.releasePointerCapture(
+                event.pointerId
+            );
+
+        }
 
     });
 
 
     /*
-       Click
-       
-       If the user did NOT drag the image,
-       open the artwork viewer.
+       Pointer cancelled
     */
 
-    art.addEventListener("click", () => {
+    art.addEventListener("pointercancel", () => {
 
-        if (moved) return;
+        dragging = false;
+
+        art.classList.remove("dragging");
+
+    });
+
+
+    /* =========================
+       Click to open
+       ========================= */
+
+    art.addEventListener("click", (event) => {
+
+        /*
+           If the image was dragged,
+           do NOT open the viewer.
+        */
+
+        if (moved) {
+
+            event.preventDefault();
+
+            return;
+
+        }
 
 
         viewer.style.display = "flex";
+
 
         viewerImage.src = art.src;
 
 
         /*
-           Use artwork information
+           Artwork information
         */
 
         if (artworkInfo[index]) {
@@ -213,13 +461,6 @@ artworks.forEach((art, index) => {
 
             text.textContent =
                 artworkInfo[index].description;
-
-        } else {
-
-            title.textContent = "Artwork";
-
-            text.textContent =
-                "A drawing, an observation, a thought, or something I wanted to make.";
 
         }
 
@@ -238,11 +479,6 @@ closeButton.addEventListener("click", () => {
 
 });
 
-
-/*
-   Click outside the artwork
-   to close viewer
-*/
 
 viewer.addEventListener("click", (event) => {
 
