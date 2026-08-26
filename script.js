@@ -21,123 +21,123 @@ let highestZIndex = 10;
 const artworkInfo = [
 
     {
-        title: "Artwork 01",
+        title: "Green Beans (Young)",
         description:
-            "A drawing about observation and imagination."
+            "Colored Pencil | The dark leaves at the bottom are the cotyledons; actually the three on top are the green bean’s true leaves."
     },
 
     {
-        title: "Artwork 02",
+        title: "Manga Cover Typography Design",
         description:
-            "A study of form, light, and space."
+            "Digital | Custom Chinese typography design for manga in Chuman platform - cover titles and logo lettering for manga series"
     },
 
     {
-        title: "Artwork 03",
+        title: "BiXia Pound",
         description:
-            "A visual experiment with color and composition."
+            "Digital | Campus ID Card Sleeve Design @ Suzhou High School of Jiangsu Province\n“BiXia” in Chinese means the azure mist. The brown-scarred geese and the light-glazed lake are impressions from my daily walks"
     },
 
     {
-        title: "Artwork 04",
+        title: "Hollyhock (Alcea Rosea)",
         description:
-            "A drawing inspired by everyday observations."
+            "Colored Pencil | Also known as "A Zhang of Red" in Suzhou. They signal the coming of Mid-autumn Festival, and their petals are large - like umbrellas."
     },
 
     {
-        title: "Artwork 05",
+        title: "Cucumbers (Young)",
         description:
-            "An exploration of shapes and atmosphere."
+            "Colored Pencil | Every summer in my home backyard, my grandma would set up trellis for the cucumbers to grow."
     },
 
     {
-        title: "Artwork 06",
+        title: "Untitled",
         description:
-            "A study of movement and form."
+            "Pen | Creative line art tryout"
     },
 
     {
-        title: "Artwork 07",
+        title: "Beetroot",
         description:
-            "An experiment with visual storytelling."
+            "Colored Pencil | The leaves of beetroots are very curly."
     },
 
     {
-        title: "Artwork 08",
+        title: "Sweet Potato",
         description:
-            "A drawing inspired by memory."
+            "Colored Pencil | Unlike cucumbers, sweet potatoes creep along the ground, because the potatoes grow under the ground (in soil)."
     },
 
     {
-        title: "Artwork 09",
+        title: "Cabbage",
         description:
-            "A study of space and atmosphere."
+            "Colored Pencil | I like cabbage because their leaves are very, very big, and they taste good!​"
     },
 
     {
-        title: "Artwork 10",
+        title: "Freckles",
         description:
-            "An exploration of line and composition."
+            "Watercolor | Referencing an online live model"
     },
 
     {
-        title: "Artwork 11",
+        title: "Green Beans (Young)",
         description:
-            "A small visual experiment."
+            "Colored Pencil | Although they look small now, after a few weeks they can climb up the trellis pretty high."
     },
 
     {
-        title: "Artwork 12",
+        title: "Shamrock",
         description:
-            "A drawing about observation."
+            "Colored Pencil | You may probably know this as "three-leave" clovers.\nBut it actually yields flowers. At my home backyard the flowers are purple, while at some other places other species of clovers could yield white flowers.\nActually they are not considered "lucky plants" in gardening. They are considered as weeds, who steal nutriets."
     },
 
     {
-        title: "Artwork 13",
+        title: "Water Spinach",
         description:
-            "An exploration of imagination."
+            "Colored Pencil | The leaves of them can grow really long."
     },
 
     {
-        title: "Artwork 14",
+        title: "Threads, Flowers, and Hair",
         description:
-            "A study of light and shadow."
+            "Embroidery | What forms do threads reveal to you? That’s all up to imagination."
     },
 
     {
-        title: "Artwork 15",
+        title: "Mint",
         description:
-            "A visual note from my sketchbook."
+            "Colored Pencil | Here’s an interesting fact: rub a mint leaf, the juice produced can help cure mosquito bites.\nI took three months to complete this mint, from June, 2025 to September, 2025. During this period I was thinking about my life, and I have encountered many people throughout the summer attending summer camps and research programs. When I completed I looked at every leaf I draw. Then I thought, maybe that the leaves did not record the story of the mint, but also record the encounters of myself."
     },
 
     {
-        title: "Artwork 16",
+        title: "Green Beans (Blooming)",
         description:
-            "An experiment with form."
+            "Colored Pencil | Most people only notice the beans of this plants. But actually its flowers are the most intriguing part for me: they have a soft, shiny purple and are butterfly-shaped!"
     },
 
     {
-        title: "Artwork 17",
+        title: "Pepper",
         description:
-            "A drawing inspired by everyday life."
+            "Colored Pencil | The tips of pepper leaves are very pointed. Moreover, I like the tiny pepper fruit - they are like lanterns! These small lanterns will grow up and turn from green to red in summer."
     },
 
     {
-        title: "Artwork 18",
+        title: "Pomegranate, or “Shiliu” Flower",
         description:
-            "A study of atmosphere."
+            "Colored Pencil | Pomegranate flowers bloom along the rack outside our house every summer back home. The summer in 2025, I traveled around Los Angeles and one day I spotted the same pomegranate blossoms in a garden in LA. I took out my phone and snapped photos. A stranger woman standing nearby noticed me and smiled, "do you know its name?" "I don't know its English name, but in Chinese we call it shiliu". She repeatedly "shiliu". So what does a name carry? I thought It’s a very interesting question."
     },
 
     {
-        title: "Artwork 19",
+        title: "Flutters",
         description:
-            "A visual experiment."
+            "Flat Digital Impasto Painting | Referencing an online live model"
     },
 
     {
-        title: "Artwork 20",
+        title: "Loquat",
         description:
-            "Something I wanted to draw."
+            "Colored Pencil | The leaves of loquat are thick and leathery. Actually when I was drawing this my mother comments that I didn't draw the leaves well. Yeah, maybe, the leaves of loquat had a very special texture."
     }
 
 ];
