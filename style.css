@@ -107,6 +107,14 @@ header p {
     transition: box-shadow 0.15s ease;
 }
 
+.art-large {
+    width: 350px;
+}
+
+.art-small {
+    width: 190px;
+}
+
 .art:hover {
     box-shadow: 0 12px 30px rgba(0, 0, 0, 0.16);
 }
