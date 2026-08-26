@@ -14,6 +14,7 @@ const text = document.getElementById("art-text");
 
 let highestZIndex = 10;
 
+
 /* =========================
    Artwork information
    ========================= */
@@ -29,31 +30,31 @@ const artworkInfo = [
     {
         title: "Manga Cover Typography Design",
         description:
-            "Digital | Custom Chinese typography design for manga in Chuman platform - cover titles and logo lettering for manga series"
+            "Digital | Custom Chinese typography design for manga on the Chuman platform — cover titles and logo lettering for manga series."
     },
 
     {
-        title: "BiXia Pound",
+        title: "BiXia Pond",
         description:
-            "Digital | Campus ID Card Sleeve Design @ Suzhou High School of Jiangsu Province\n“BiXia” in Chinese means the azure mist. The brown-scarred geese and the light-glazed lake are impressions from my daily walks"
+            "Digital | Campus ID card sleeve design at Suzhou High School of Jiangsu Province.\n“BiXia” in Chinese means azure mist. The brown-scarred geese and the light-glazed lake are impressions from my daily walks."
     },
 
     {
-        title: "Hollyhock (Alcea Rosea)",
+        title: "Hollyhock (Alcea rosea)",
         description:
-            "Colored Pencil | Also known as "A Zhang of Red" in Suzhou. They signal the coming of Mid-autumn Festival, and their petals are large - like umbrellas."
+            "Colored Pencil | Also known as 'A Zhang of Red' in Suzhou. They signal the coming of the Mid-Autumn Festival, and their petals are large—like umbrellas."
     },
 
     {
         title: "Cucumbers (Young)",
         description:
-            "Colored Pencil | Every summer in my home backyard, my grandma would set up trellis for the cucumbers to grow."
+            "Colored Pencil | Every summer in my home backyard, my grandma would set up trellises for the cucumbers to grow."
     },
 
     {
         title: "Untitled",
         description:
-            "Pen | Creative line art tryout"
+            "Pen | Creative line-art experiment."
     },
 
     {
@@ -65,79 +66,79 @@ const artworkInfo = [
     {
         title: "Sweet Potato",
         description:
-            "Colored Pencil | Unlike cucumbers, sweet potatoes creep along the ground, because the potatoes grow under the ground (in soil)."
+            "Colored Pencil | Unlike cucumbers, sweet potatoes creep along the ground because the potatoes grow underground, in soil."
     },
 
     {
         title: "Cabbage",
         description:
-            "Colored Pencil | I like cabbage because their leaves are very, very big, and they taste good!​"
+            "Colored Pencil | I like cabbage because its leaves are very, very big, and it tastes good!"
     },
 
     {
         title: "Freckles",
         description:
-            "Watercolor | Referencing an online live model"
+            "Watercolor | Referencing an online live model."
     },
 
     {
         title: "Green Beans (Young)",
         description:
-            "Colored Pencil | Although they look small now, after a few weeks they can climb up the trellis pretty high."
+            "Colored Pencil | Although they look small now, after a few weeks they can climb quite high up the trellis."
     },
 
     {
         title: "Shamrock",
         description:
-            "Colored Pencil | You may probably know this as "three-leave" clovers.\nBut it actually yields flowers. At my home backyard the flowers are purple, while at some other places other species of clovers could yield white flowers.\nActually they are not considered "lucky plants" in gardening. They are considered as weeds, who steal nutriets."
+            "Colored Pencil | You may know this as 'three-leaf clover.'\nBut it also yields flowers. In my backyard, the flowers are purple; elsewhere, other clover species can produce white flowers.\nThey are not considered 'lucky plants' in gardening. They are often treated as weeds that compete for nutrients."
     },
 
     {
         title: "Water Spinach",
         description:
-            "Colored Pencil | The leaves of them can grow really long."
+            "Colored Pencil | Its leaves can grow really long."
     },
 
     {
         title: "Threads, Flowers, and Hair",
         description:
-            "Embroidery | What forms do threads reveal to you? That’s all up to imagination."
+            "Embroidery | What forms do threads reveal to you? That is all up to imagination."
     },
 
     {
         title: "Mint",
         description:
-            "Colored Pencil | Here’s an interesting fact: rub a mint leaf, the juice produced can help cure mosquito bites.\nI took three months to complete this mint, from June, 2025 to September, 2025. During this period I was thinking about my life, and I have encountered many people throughout the summer attending summer camps and research programs. When I completed I looked at every leaf I draw. Then I thought, maybe that the leaves did not record the story of the mint, but also record the encounters of myself."
+            "Colored Pencil | Here is an interesting fact: rubbing a mint leaf releases juice that can help soothe mosquito bites.\nI took three months to complete this drawing, from June 2025 to September 2025. During this period, I thought about my life and encountered many people attending summer camps and research programs.\nWhen I completed it, I looked at every leaf I had drawn. Maybe the leaves did not only record the story of the mint, but also my own encounters."
     },
 
     {
         title: "Green Beans (Blooming)",
         description:
-            "Colored Pencil | Most people only notice the beans of this plants. But actually its flowers are the most intriguing part for me: they have a soft, shiny purple and are butterfly-shaped!"
+            "Colored Pencil | Most people only notice the beans of this plant. But its flowers are the most intriguing part to me: they are soft, shiny purple, and butterfly-shaped."
     },
 
     {
         title: "Pepper",
         description:
-            "Colored Pencil | The tips of pepper leaves are very pointed. Moreover, I like the tiny pepper fruit - they are like lanterns! These small lanterns will grow up and turn from green to red in summer."
+            "Colored Pencil | The tips of pepper leaves are very pointed. I also like the tiny pepper fruits—they look like lanterns. These small lanterns grow larger and turn from green to red in summer."
     },
 
     {
-        title: "Pomegranate, or “Shiliu” Flower",
+        title: "Pomegranate, or 'Shiliu' Flower",
         description:
-            "Colored Pencil | Pomegranate flowers bloom along the rack outside our house every summer back home. The summer in 2025, I traveled around Los Angeles and one day I spotted the same pomegranate blossoms in a garden in LA. I took out my phone and snapped photos. A stranger woman standing nearby noticed me and smiled, "do you know its name?" "I don't know its English name, but in Chinese we call it shiliu". She repeatedly "shiliu". So what does a name carry? I thought It’s a very interesting question."
+            "Colored Pencil | Pomegranate flowers bloom along the rack outside our house every summer back home. In the summer of 2025, I traveled around Los Angeles and spotted the same blossoms in a garden. I took out my phone and snapped photos.\nA woman standing nearby noticed me and smiled: 'Do you know its name?' I said, 'I do not know its English name, but in Chinese we call it shiliu.' She repeated, 'Shiliu.'\nSo what does a name carry? I thought it was a very interesting question."
     },
 
     {
         title: "Flutters",
         description:
-            "Flat Digital Impasto Painting | Referencing an online live model"
+            "Flat digital impasto painting | Referencing an online live model."
     },
 
     {
         title: "Loquat",
         description:
-            "Colored Pencil | The leaves of loquat are thick and leathery. Actually when I was drawing this my mother comments that I didn't draw the leaves well. Yeah, maybe, the leaves of loquat had a very special texture."
+            "Colored Pencil | Loquat leaves are thick and leathery. When I was drawing this, my mother commented that I had not drawn the leaves well. Maybe she was right—the leaves of loquat have a very particular texture."
     }
 
 ];
@@ -156,12 +157,11 @@ function arrangeArtworks() {
     const placed = [];
 
 
-    artworks.forEach((art, index) => {
+    artworks.forEach((art) => {
 
         const width = art.offsetWidth;
 
         const height = art.offsetHeight;
-
 
         let x;
 
@@ -172,33 +172,16 @@ function arrangeArtworks() {
         let validPosition = false;
 
 
-        while (!validPosition && attempts < 200) {
-
-            /*
-               Random horizontal position
-            */
+        while (!validPosition && attempts < 300) {
 
             x = Math.random() *
                 Math.max(20, wallWidth - width - 55) + 25;
 
-
-            /*
-               Random vertical position
-
-               This is the important part:
-               the entire 2400px wall is used.
-            */
-
             y = Math.random() *
                 Math.max(100, wallHeight - height - 55) + 25;
 
-
             validPosition = true;
 
-
-            /*
-               Check distance from existing images
-            */
 
             for (const other of placed) {
 
@@ -209,15 +192,9 @@ function arrangeArtworks() {
                     Math.abs(y - other.y);
 
 
-                /*
-                   Minimum spacing
-
-                   Larger values = less overlap
-                */
-
                 if (
-                    horizontalDistance < 250 &&
-                    verticalDistance < 220
+                    horizontalDistance < 310 &&
+                    verticalDistance < 285
                 ) {
 
                     validPosition = false;
@@ -227,15 +204,10 @@ function arrangeArtworks() {
 
             }
 
-
             attempts++;
 
         }
 
-
-        /*
-           Place artwork
-        */
 
         art.style.left = x + "px";
 
@@ -252,9 +224,9 @@ function arrangeArtworks() {
 }
 
 
-/*
-   Wait until images are loaded
-*/
+/* =========================
+   Arrange after images load
+   ========================= */
 
 window.addEventListener("load", () => {
 
@@ -264,7 +236,7 @@ window.addEventListener("load", () => {
 
 
 /* =========================
-   Dragging
+   Dragging and viewer
    ========================= */
 
 artworks.forEach((art, index) => {
@@ -282,86 +254,47 @@ artworks.forEach((art, index) => {
     let startTop = 0;
 
 
-    /*
-       Pointer pressed
-    */
-
     art.addEventListener("pointerdown", (event) => {
 
-        /*
-           Only respond to primary pointer
-        */
-
         if (!event.isPrimary) return;
-
 
         dragging = true;
 
         moved = false;
 
-
         startPointerX = event.clientX;
 
         startPointerY = event.clientY;
-
 
         startLeft = art.offsetLeft;
 
         startTop = art.offsetTop;
 
 
-        /*
-           Bring image to front
-        */
-
         highestZIndex++;
 
         art.style.zIndex = highestZIndex;
 
-        /*
-           Capture pointer
-
-           This prevents the drag from
-           breaking when the pointer moves
-           quickly.
-        */
 
         art.setPointerCapture(event.pointerId);
 
-
         art.classList.add("dragging");
-
 
         event.preventDefault();
 
     });
 
 
-    /*
-       Pointer moves
-    */
-
     art.addEventListener("pointermove", (event) => {
 
         if (!dragging) return;
 
+        const dx = event.clientX - startPointerX;
 
-        const dx =
-            event.clientX - startPointerX;
-
-        const dy =
-            event.clientY - startPointerY;
+        const dy = event.clientY - startPointerY;
 
 
-        /*
-           Only consider it a drag after
-           moving at least 6 pixels.
-        */
-
-        if (
-            Math.abs(dx) > 6 ||
-            Math.abs(dy) > 6
-        ) {
+        if (Math.abs(dx) > 6 || Math.abs(dy) > 6) {
 
             moved = true;
 
@@ -370,52 +303,32 @@ artworks.forEach((art, index) => {
 
         if (moved) {
 
-            art.style.left =
-                startLeft + dx + "px";
+            art.style.left = startLeft + dx + "px";
 
-            art.style.top =
-                startTop + dy + "px";
+            art.style.top = startTop + dy + "px";
 
         }
 
     });
 
-
-    /*
-       Pointer released
-    */
 
     art.addEventListener("pointerup", (event) => {
 
         if (!dragging) return;
 
-
         dragging = false;
-
 
         art.classList.remove("dragging");
 
 
-        /*
-           Release pointer capture
-        */
+        if (art.hasPointerCapture(event.pointerId)) {
 
-        if (
-            art.hasPointerCapture(event.pointerId)
-        ) {
-
-            art.releasePointerCapture(
-                event.pointerId
-            );
+            art.releasePointerCapture(event.pointerId);
 
         }
 
     });
 
-
-    /*
-       Pointer cancelled
-    */
 
     art.addEventListener("pointercancel", () => {
 
@@ -426,16 +339,7 @@ artworks.forEach((art, index) => {
     });
 
 
-    /* =========================
-       Click to open
-       ========================= */
-
     art.addEventListener("click", (event) => {
-
-        /*
-           If the image was dragged,
-           do NOT open the viewer.
-        */
 
         if (moved) {
 
@@ -448,21 +352,14 @@ artworks.forEach((art, index) => {
 
         viewer.style.display = "flex";
 
-
         viewerImage.src = art.src;
 
 
-        /*
-           Artwork information
-        */
-
         if (artworkInfo[index]) {
 
-            title.textContent =
-                artworkInfo[index].title;
+            title.textContent = artworkInfo[index].title;
 
-            text.textContent =
-                artworkInfo[index].description;
+            text.textContent = artworkInfo[index].description;
 
         }
 
