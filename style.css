@@ -181,10 +181,6 @@ header p {
 #description p {
     margin: 0;
 
-    /*
-       原先这里强制使用 Arial，
-       改为 Crimson Pro，保证弹窗也统一字体。
-    */
     font-family: "Crimson Pro", "Times New Roman", serif;
 
     font-size: 18px;
@@ -192,6 +188,8 @@ header p {
     line-height: 1.5;
 
     color: #ddd;
+    
+    white-space: pre-line;
 }
 
 
