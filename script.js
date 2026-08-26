@@ -1,3 +1,83 @@
+/* =========================
+   Floating Star Particles
+   ========================= */
+
+const starField = document.getElementById("star-field");
+
+const starCount = window.innerWidth <= 700 ? 35 : 65;
+
+
+for (let i = 0; i < starCount; i++) {
+
+    const star = document.createElement("span");
+
+    star.classList.add("star");
+
+
+    /* Random size */
+
+    const randomSize = Math.random();
+
+    if (randomSize < 0.72) {
+
+        star.classList.add("small");
+
+    } else if (randomSize < 0.95) {
+
+        star.classList.add("medium");
+
+    } else {
+
+        star.classList.add("large");
+
+    }
+
+
+    /* Random position */
+
+    star.style.left =
+        Math.random() * 100 + "%";
+
+    star.style.top =
+        Math.random() * 100 + "%";
+
+
+    /* Random movement */
+
+    star.style.setProperty(
+        "--move-x",
+        (Math.random() * 80 - 40) + "px"
+    );
+
+    star.style.setProperty(
+        "--move-y",
+        (Math.random() * 80 - 40) + "px"
+    );
+
+
+    /* Random animation speed */
+
+    star.style.setProperty(
+        "--duration",
+        (18 + Math.random() * 25) + "s"
+    );
+
+    star.style.setProperty(
+        "--twinkle",
+        (3 + Math.random() * 5) + "s"
+    );
+
+
+    /* Random animation delay */
+
+    star.style.animationDelay =
+        (-Math.random() * 30) + "s";
+
+
+    starField.appendChild(star);
+
+}
+
 const artworks = document.querySelectorAll(".art");
 
 const wall = document.getElementById("art-wall");
