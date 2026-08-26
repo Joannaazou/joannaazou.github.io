@@ -1,3 +1,29 @@
+* {
+    box-sizing: border-box;
+}
+
+
+/* =========================
+   Base
+   ========================= */
+
+html {
+    background: #f5f1e8;
+}
+
+body {
+    margin: 0;
+
+    background: #f5f1e8;
+
+    color: #24211d;
+
+    font-family: "Libre Bodoni", "Times New Roman", serif;
+
+    overflow-x: hidden;
+}
+
+
 /* =========================
    Animated Watercolor Background
    ========================= */
@@ -198,38 +224,6 @@
 
 
 /* =========================
-   Keep website content above
-   ========================= */
-
-header,
-#art-wall {
-    position: relative;
-
-    z-index: 1;
-}
-
-* {
-    box-sizing: border-box;
-}
-
-html {
-    background: #f5f1e8;
-}
-
-body {
-    margin: 0;
-
-    background: #f5f1e8;
-
-    color: #24211d;
-
-    font-family: "Libre Bodoni", "Times New Roman", serif;
-
-    overflow-x: hidden;
-}
-
-
-/* =========================
    Introduction
    ========================= */
 
@@ -301,12 +295,10 @@ header h1 {
 #art-wall {
     position: relative;
 
+    z-index: 1;
+
     width: 100%;
 
-    /*
-       原本是 2400px。
-       改成 1750px，让整体画布明显更紧凑。
-    */
     min-height: 1750px;
 
     overflow: hidden;
@@ -320,10 +312,6 @@ header h1 {
 .art {
     position: absolute;
 
-    /*
-       原本是 190px。
-       改为 215px，让图片稍微更突出。
-    */
     width: 250px;
 
     height: auto;
@@ -422,7 +410,7 @@ header h1 {
     line-height: 1.5;
 
     color: #ddd;
-    
+
     white-space: pre-line;
 }
 
