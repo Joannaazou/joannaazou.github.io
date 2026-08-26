@@ -12,6 +12,7 @@ const title = document.getElementById("art-title");
 
 const text = document.getElementById("art-text");
 
+let highestZIndex = 10;
 
 /* =========================
    Artwork information
@@ -313,8 +314,9 @@ artworks.forEach((art, index) => {
            Bring image to front
         */
 
-        art.style.zIndex = 1000 + index;
+        highestZIndex++;
 
+        art.style.zIndex = highestZIndex;
 
         /*
            Capture pointer
