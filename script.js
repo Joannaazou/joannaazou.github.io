@@ -108,7 +108,7 @@ const artworkInfo = [
     {
         title: "Mint",
         description:
-            "Colored Pencil | Here is an interesting fact: rubbing a mint leaf releases juice that can help soothe mosquito bites.\nI took three months to complete this drawing, from June 2025 to September 2025. During this period, I thought about my life and encountered many people attending summer camps and research programs.\nWhen I completed it, I looked at every leaf I had drawn. Maybe the leaves did not only record the story of the mint, but also my own encounters."
+            "Colored Pencil | Here is an interesting fact: rubbing a mint leaf releases juice that can help soothe mosquito bites.\nI took three months to complete this drawing, from June 2025 to September 2025. During this period, I thought about my life and encountered many people attending summer camps and research programs.When I completed it, I thought maybe the leaves did not only record the story of the mint, but also my own encounters."
     },
 
     {
